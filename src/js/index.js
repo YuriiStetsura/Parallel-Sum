@@ -12,7 +12,7 @@ btn.addEventListener('click', getResult)
 function getResult(e) {
     e.preventDefault()
     
-    resultDiv.innerText = parallelSum(convertToNum(dataInput))
+    resultDiv.innerText = `Output: ${parallelSum(convertToNum(dataInput))}`
     jumbotron.append(resultDiv)
 }
 
