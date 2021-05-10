@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Parallel Sums</h1>
+        <p class="lead">Have the function parallelSum(arr) take the array of integers stored in arr which will always
+            contain an even amount of integers, and determine how they can be split into two even sets of integers each
+            so that both sets add up to the same number. If this is impossible return -1. If it’s possible to split the
+            array into two sets, then return a string representation of the first set followed by the second set with
+            each integer separated by a comma and both sets sorted in ascending order. The set that goes first is the
+            set with the smallest first integer.</p>
+            <p>For example: if arr is [16, 22, 35, 8, 20, 1, 21, 11], then your program should output 1,11,20,35,8,16,21,22</p>
+        <hr class="my-4">
+        <p>Enter the elements of the array (enter with a space):</p>
+        <input class="entry" type="text" placeholder="entry the elements" name="elem_of_array">
+        <style>
+            .entry {
+                margin-bottom: 10px;
+            }
+        </style>
+        <p class="lead">
+            <button type="button" class="btn btn-primary">Run</button>
+        </p>
+    </div>
+    <script src="./src/js/index.js"></script>
+</body>
+
+</html>
