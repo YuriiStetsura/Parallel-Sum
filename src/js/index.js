@@ -2,6 +2,7 @@ const input = document.querySelector('.entry')
 const btn = document.querySelector('.btn')
 const jumbotron = document.querySelector('.jumbotron')
 const resultDiv = document.createElement('div')
+const errorDiv = document.createElement('div')
 
 let dataInput = null
 let result = null
@@ -12,12 +13,35 @@ btn.addEventListener('click', getResult)
 function getResult(e) {
     e.preventDefault()
     
-    resultDiv.innerText = `Output: ${parallelSum(convertToNumAndSort(dataInput))}`
-    jumbotron.append(resultDiv)
+    resultDiv.remove()
+    errorDiv.remove()
+
+    if(validate(convertToNumAndSort(dataInput))) {
+        return showResult()
+    }
+    return showError()
+}
+
+function validate(arr) {
+    if(arr.length === 0) return false
+    return arr.every(elem => !isNaN(elem))
 }
 
 function getDataInput(e) {
     dataInput = e.target.value
+}
+
+function showError() {
+    errorDiv.classList.add('alert', 'alert-danger')
+    errorDiv.textContent = 'enter valid values!'
+
+    jumbotron.append(errorDiv)
+}
+
+function showResult() {
+    resultDiv.innerText = `Output: ${parallelSum(convertToNumAndSort(dataInput))}`
+
+    jumbotron.append(resultDiv)
 }
 
 function convertToNumAndSort(str) {
@@ -57,4 +81,6 @@ function parallelSum(arr) {
     }
     return result.length ? result : -1
 }
+
+
 
