@@ -12,7 +12,7 @@ btn.addEventListener('click', getResult)
 function getResult(e) {
     e.preventDefault()
     
-    resultDiv.innerText = `Output: ${parallelSum(convertToNum(dataInput))}`
+    resultDiv.innerText = `Output: ${parallelSum(convertToNumAndSort(dataInput))}`
     jumbotron.append(resultDiv)
 }
 
@@ -20,10 +20,11 @@ function getDataInput(e) {
     dataInput = e.target.value
 }
 
-function convertToNum(str) {
+function convertToNumAndSort(str) {
     return str
             .split(' ')
             .map(elem => +elem)
+            .sort((a,b) => a - b)
 }
 
 function* combinations(array, length) {
